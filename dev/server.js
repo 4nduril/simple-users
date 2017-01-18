@@ -1,11 +1,12 @@
 import express from 'express';
-import users from './userMiddleware';
+import users from '../src/userMiddleware';
 
 const app = express();
 
+app.use('/users', users);
 app.get('/', (req, res) => {
 	res.send('Hello. Try "/users" instead.\n');
 });
-app.use('/users', users);
 
 app.listen(3000);
+console.log('Server running…');
