@@ -32,10 +32,10 @@ const signIn = (req, res) => {
 
 users.use(cookieParser());*/
 
-users.use('/signin', routes.signIn);
-users.use('/signup', routes.signUp);
-users.use('/logout', routes.logout);
-users.use('/forgotpw', routes.forgotPw);
-users.use('/', routes.base);
+users.all('/signin', routes.signIn);
+users.all('/signup', routes.signUp);
+users.all('/logout', routes.logout);
+users.all('/forgotpw', routes.forgotPw);
+users.all('*', routes.base);
 
 export default users;
